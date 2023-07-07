@@ -1,0 +1,66 @@
+body {
+    background: rgb(150,150,150);
+    color: rgb(0,0,0);
+    padding: 10px;
+    font-family: arial;
+}
+#all-contents {
+  max-width: 800px;
+    margin: auto;
+}
+
+/* navigation menu */
+nav {
+    background: rgb(0, 255, 0);
+   margin: 0 auto;
+   margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+    border-radius: 30px;
+}
+h1 {
+    display: flex;
+    align-items: center;
+    color: rgb(0,0,0);
+    flex: 1;
+    margin: 0;
+}
+#nav-ul {
+    list-style-image: none;
+}
+.nav-li {
+    display: inline-block;
+    padding: 0 10px;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* main container area beneath menu */
+main {
+    background: rgb(200,100,200);
+    display: flex;
+}
+.sidebar {
+    margin-right: 0px;
+    padding: 10px;
+    display: flex;
+}
+.sidebar-img {
+    width: 200px;
+    border-radius: 50px;
+}
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+/* portfolio styles */
+#interests {
+    border: 4px rgb(0,0,0) ridge;
+    padding: 8px;
+}
+h2, h3 {
+    margin: 0px;
+}
