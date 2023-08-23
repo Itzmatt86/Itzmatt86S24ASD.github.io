@@ -1,5 +1,5 @@
 body {
-    background: rgb(150,150,150);
+    background: rgb(0,0,0);
     color: rgb(0,0,0);
     padding: 10px;
     font-family: arial;
@@ -39,7 +39,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(200,100,200);
+    background: rgb(0,200,200);
     display: flex;
 }
 .sidebar {
@@ -76,8 +76,8 @@ h2, h3 {
 }
 
 #portfolio li {
-    background: #fff;
-    padding: 10px;
+    background: rgb(200,200,0);
+    padding: 5px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -92,10 +92,10 @@ h2, h3 {
 }
 
 /* responsive web design */
-@media screen and (min-width: 120px) and (max-width: 1080px) {
+@media screen and (min-width: 120px) and (max-width: 1920px) {
 main {
     height: 100ch;
-    zoom: 1.5;
+    zoom: 0;
     display: grid;
 }
 
@@ -104,7 +104,7 @@ h1 {
 }
 
 h2 {
-    font-size: medium;
+    font-size: xx-large;
 }
 
 h3 {
@@ -118,7 +118,7 @@ h3 {
 
 /* Portfolio Lists */
 a {
-    font-size: medium;
+    font-size: larger;
 }
 
 .sidebar {
@@ -133,7 +133,7 @@ a {
 
 p,
 li {
-    font-size: 24px;
+    font-size: large;
 }
 
 .content {
