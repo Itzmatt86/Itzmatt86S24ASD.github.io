@@ -1,5 +1,5 @@
 body {
-    background: rgb(0,0,0);
+    background-image: url('xenos.png');
     color: rgb(0,0,0);
     padding: 10px;
     font-family: arial;
@@ -23,7 +23,7 @@ h1 {
     align-items: center;
     color: rgb(0,0,0);
     flex: 1;
-    margin: 0;
+    margin: 50px;
 }
 #nav-ul {
     list-style-image: none;
@@ -141,3 +141,5 @@ li {
     justify-content: center;
 }
 }
+
+
