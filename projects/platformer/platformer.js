@@ -132,7 +132,7 @@ $(function () {
     // example usage: createCollectable(type, x, y, gravity, bounce)
 
 
-    createCollectable("database", 240, 100, 1, 1);
+    createCollectable("star", 240, 100, 1, 1);
     createCollectable("database", 1240, 100, 1, 1);
     
     createCollectable("database", 590, 200, 1, 1);
@@ -140,7 +140,7 @@ $(function () {
     
     createCollectable("database", 240, 300, 1, 1);
     createCollectable("database", 1240, 300, 1, 1);
-    //
+    
     createCollectable("database", 590, 400, 1, 1);
     createCollectable("database", 890, 400, 1, 1);
     
