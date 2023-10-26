@@ -29,15 +29,15 @@ $(function () {
      * Comment the lines out to remove the grid
      */
 
-    // Loop to create vertical grid lines
-    // for (let i = 100; i < canvas.width; i += 100) {
-    //   createPlatform(i, 0, 1, canvas.height);
-    // }
+    //  Loop to create vertical grid lines
+     for (let i = 100; i < canvas.width; i += 100) {
+       createPlatform(i, 0, 1, canvas.height);
+     }
 
-    // Loop to create horizontal gride lines
-    // for (let i = 100; i < canvas.height; i += 100) {
-    //   createPlatform(0, i, canvas.width, 1);
-    // }
+    //  Loop to create horizontal gride lines
+     for (let i = 100; i < canvas.height; i += 100) {
+       createPlatform(0, i, canvas.width, 1);
+     }
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
