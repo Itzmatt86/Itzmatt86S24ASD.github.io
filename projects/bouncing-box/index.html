@@ -81,8 +81,8 @@
 			var misClick = 0
 
 			function getRandomColor1() {
-				var rC1 = Math.floor(Math.random() * 256);
-				var gC1 = Math.floor(Math.random() * 256);
+				var rC1 = Math.floor(Math.random() * 256);      //rgb(200, 140, 60)
+				var gC1 = Math.floor(Math.random() * 256);		//rgb(60, 45, 25)
 				var bC1 = Math.floor(Math.random() * 256);
 				return "rgb(" + rC1 + "," + gC1 + "," + bC1 + ")";
 			}
@@ -152,6 +152,7 @@
 			*/
 			function handleBoxClick() {
 				if (misClick < 10) {
+					misClick = misClick - 1
 					var colorPick1 = getRandomColor1()
 					var colorPick2 = getRandomColor2()
 					var colorPick3 = getRandomColor3()
