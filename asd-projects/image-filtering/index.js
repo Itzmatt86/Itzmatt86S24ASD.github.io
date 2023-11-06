@@ -20,8 +20,14 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-  applyFilter();
+  applyFilter(reddify);
+  //applyFilter(decreaseBlue);
+  //applyFilter(increaseGreenByBlue);
   
+  //applyFilterNoBackground(reddify);
+  applyFilterNoBackground(decreaseBlue);
+  applyFilterNoBackground(increaseGreenByBlue);
+
 
   // do not change the below line of code
   render($("#display"), image);
@@ -32,20 +38,38 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-function applyFilter() {
+function applyFilter(filterFunction) {
   for (let row = 0; row < image.length; row++) {
     for (let col = 0; col < image[row].length; col++) {
       let rgbString = image[row][col];
       let rgbNumbers = rgbStringToArray(rgbString);
-      rgbNumbers[RED] = 255;
+
+      filterFunction(rgbNumbers);
+
       rgbString = rgbArrayToString(rgbNumbers);
       image[row][col] = rgbString;
+    }
+  }
 }
-}
-}
+
 
 // TODO 7: Create the applyFilterNoBackground function
+function applyFilterNoBackground(filterFunction) {
+  const backgroundColor = image[0][0];
 
+  for (let row = 0; row < image.length; row++) {
+    for (let col = 0; col < image[row].length; col++) {
+      let rgbString = image[row][col];
+      let rgbNumbers = rgbStringToArray(rgbString);
+
+      if (rgbString !== backgroundColor) {
+        filterFunction(rgbNumbers);
+        rgbString = rgbArrayToString(rgbNumbers);
+        image[row][col] = rgbString;
+      }
+    }
+  }
+}
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(boundNum) {
@@ -59,6 +83,16 @@ function reddify(rgbArray) {
 }
 
 // TODO 6: Create more filter functions
+//<blue value> = keepInBounds(<blue value> - 50);
+function decreaseBlue(rgbArray) {
+  rgbArray[BLUE] = keepInBounds(rgbArray[BLUE] - 50);
+}
+
+//<green value> = keepInBounds(<blue value> + <green value>);
+function increaseGreenByBlue(rgbArray) {
+  rgbArray[GREEN] = keepInBounds(rgbArray[BLUE] + rgbArray[GREEN]);
+}
+
 
 
 // CHALLENGE code goes below here
