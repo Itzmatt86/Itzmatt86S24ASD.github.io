@@ -14,7 +14,6 @@ The CSS ids you will work with are:
 ///////////////////////////////////////////////////////////////////////
 
 // TODO 2: Implement bubbleSort
-async function bubbleSort(array) {
     async function bubbleSort(array) {
         var length = array.length;
         for (var i = 0; i < length - 1; i++) {
@@ -28,8 +27,6 @@ async function bubbleSort(array) {
         }
     }
 
-
-}
 
 // TODO 3: Implement quickSort
 async function quickSort(array, left, right) {
@@ -73,6 +70,7 @@ async function partition(array, left, right) {
 
 // TODO 1: Implement swap
 function swap(array, i, j) {
+    var tempVar = array[i]
     array[i] = array[j]
     array[j] = tempVar
     drawSwap(array, i, j)
