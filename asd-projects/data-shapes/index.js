@@ -279,3 +279,4 @@ $(document).ready(function () {
     $("#shape").css("transform", `rotate(${animationDetails.angle}deg)`);
   }
 });
+

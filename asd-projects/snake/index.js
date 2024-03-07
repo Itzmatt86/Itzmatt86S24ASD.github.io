@@ -53,8 +53,8 @@ function init() {
   makeApple()
   // TODO 5a: Initialize the interval
   // start update interval
-  updateInterval = setInterval(update, 100);
-  
+  updateInterval = setInterval(update, 60);
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -199,28 +199,26 @@ function handleAppleCollision() {
   apple.element.remove();
   makeApple();
 
-  
-  var newRow = snake.tail.row;
-  var newColumn = snake.tail.column;
-  var newDirection = snake.tail.direction;
+
+  var row = snake.tail.row;
+  var column = snake.tail.column;
 
 
   // Determine the new row and column based on the direction of the tail
   if (snake.tail.direction === "left") {
-    newColumn++;
+    column++;
   }
   if (snake.tail.direction === "right") {
-    newColumn--;
+    column--;
   }
   if (snake.tail.direction === "up") {
-    newRow++;
+    row++;
   }
   if (snake.tail.direction === "down") {
-    newRow--;
+    row--;
   }
 
-  makeSnakeSquare(newRow, newColumn);
-  snake.tail.direction = newDirection;
+  makeSnakeSquare(row, column);
 }
 
 function hasCollidedWithSnake() {
