@@ -73,10 +73,8 @@ var walker = {
   }
   
   function handleKeyUp(event) {
-    if (event.which === KEY.LEFT || event.which === KEY.RIGHT) {
+    if (event.which === KEY.LEFT || event.which === KEY.RIGHT || KEY.UP || event.which === KEY.DOWN) {
       walker.speedX = 0;
-    }
-    if (event.which === KEY.UP || event.which === KEY.DOWN) {
       walker.speedY = 0;
     }
   }
