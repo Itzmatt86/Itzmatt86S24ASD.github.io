@@ -73,7 +73,8 @@ function applyFilterNoBackground(filterFunction) {
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(boundNum) {
-  return Math.min(255, Math.max(0, boundNum));
+  // return Math.min(255, Math.max(0, boundNum));
+  return Math.max(255, Math.min(0, boundNum))
 }
 
 
@@ -96,3 +97,5 @@ function increaseGreenByBlue(rgbArray) {
 
 
 // CHALLENGE code goes below here
+
+
