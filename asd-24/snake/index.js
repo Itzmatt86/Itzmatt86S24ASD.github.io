@@ -11,9 +11,9 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
-var snake = {}
-var apple = {}
-var score = 0
+var snake = {};
+var apple = {};
+var score = 0;
 
 // Constant Variables
 var ROWS = 20;
@@ -50,11 +50,10 @@ function init() {
   // make the first snakeSquare and set it as the head
   makeSnakeSquare(10, 10);
   snake.head = snake.body[0];
-  makeApple()
+  makeApple();
   // TODO 5a: Initialize the interval
   // start update interval
-  updateInterval = setInterval(update, 60);
-
+  updateInterval = setInterval(update, 100);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -103,7 +102,7 @@ function checkForNewDirection(event) {
 
   // FILL IN THE REST
 
-  console.log(snake.head.direction);     // uncomment me!
+  console.log(snake.head.direction); // uncomment me!
 }
 
 function moveSnake() {
@@ -186,8 +185,9 @@ function hasCollidedWithApple() {
   */
   if (snake.head.row === apple.row && snake.head.column === apple.column) {
     return true;
+  } else {
+    return false;
   }
-  else { return false }
 }
 
 function handleAppleCollision() {
@@ -199,10 +199,8 @@ function handleAppleCollision() {
   apple.element.remove();
   makeApple();
 
-
   var row = snake.tail.row;
   var column = snake.tail.column;
-
 
   // Determine the new row and column based on the direction of the tail
   if (snake.tail.direction === "left") {
@@ -235,7 +233,6 @@ function hasCollidedWithSnake() {
   }
   return false;
 }
-
 
 function endGame() {
   // stop update function from running
@@ -273,7 +270,6 @@ function makeApple() {
 
   // position the apple on the screen
   repositionSquare(apple);
-
 }
 
 /* Create an HTML element for a snakeSquare using jQuery. Then, given a row and
@@ -348,7 +344,10 @@ function getRandomAvailablePosition() {
     spaceIsAvailable = true;
 
     for (let i = 0; i < snake.body.length; i++) {
-      if (randomPosition.column === snake.body[i].column && randomPosition.row === snake.body[i].row) {
+      if (
+        randomPosition.column === snake.body[i].column &&
+        randomPosition.row === snake.body[i].row
+      ) {
         spaceIsAvailable = false;
         break;
       }
@@ -357,7 +356,6 @@ function getRandomAvailablePosition() {
 
   return randomPosition;
 }
-
 
 function calculateHighScore() {
   // retrieve the high score from session storage if it exists, or set it to 0
