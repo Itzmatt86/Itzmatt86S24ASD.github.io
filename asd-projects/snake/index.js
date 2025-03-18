@@ -100,16 +100,8 @@ function moveSnake() {
   column/row properties. 
   
   */
-
-  //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
 
-  /* 
-  TODO 7: determine the next row and column for the snake's head
-  
-  HINT: The snake's head will need to move forward 1 square based on the value
-  of snake.head.direction which may be one of "left", "right", "up", or "down"
-  */
   if (snake.head.direction === "left") {
     snake.head.column = snake.head.column - 1;
   }
@@ -127,34 +119,38 @@ function moveSnake() {
   }
 
   repositionSquare(snake.head);
-
-
-
-
-
 }
 
 function hasHitWall() {
-  /* 
-  TODO 8: Should return true if the snake's head has collided with the four walls of the
-  board, false otherwise.
-  
-  HINT: What will the row and column of the snake's head be if this were the case?
-  */
+  if (snake.head.row === -1) {
+    return true;
+  }
+
+  if (snake.head.row === ROWS + 1) {
+    return true;
+  }
+
+  if (snake.head.column === -1) {
+    return true;
+  }
+
+  if (snake.head.column === COLUMNS + 1) {
+    return true;
+  }
 
   return false;
 }
 
 function hasCollidedWithApple() {
-  /* 
-  TODO 9: Should return true if the snake's head has collided with the apple, 
-  false otherwise
-  
-  HINT: Both the apple and the snake's head are aware of their own row and column
-  */
-
-  return false;
+  if (snake.head.row === apple.row && snake.head.column === apple.column) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+
+
 
 function handleAppleCollision() {
   // increase the score and update the score DOM element
@@ -165,20 +161,21 @@ function handleAppleCollision() {
   apple.element.remove();
   makeApple();
 
-  /* 
-  TODO 10: determine the location of the next snakeSquare based on the .row,
-  .column and .direction properties of the snake.tail snakeSquare
-  
-  HINT: snake.tail.direction will be either "left", "right", "up", or "down".
-  If the tail is moving "left", place the next snakeSquare to its right. 
-  If the tail is moving "down", place the next snakeSquare above it.
-  etc...
-  */
-  var row = 0;
-  var column = 0;
+  var row = snake.tail.row;
+  var column = snake.tail.column;
 
-  // code to determine the row and column of the snakeSquare to add to the snake
-
+  if (snake.tail.direction === "left") {
+    column++;
+  }
+  if (snake.tail.direction === "up") {
+    row++;
+  }
+  if (snake.tail.direction === "right") {
+    column--;
+  }
+  if (snake.tail.direction === "down") {
+    row--;
+  }
   makeSnakeSquare(row, column);
 }
 
