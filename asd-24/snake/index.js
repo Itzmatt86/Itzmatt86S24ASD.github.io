@@ -106,8 +106,6 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  // ... existing code ...
-
   for (var i = snake.body.length - 1; i > 0; i--) {
     var snakeSquare = snake.body[i];
     var nextSnakeSquare = snake.body[i - 1];
